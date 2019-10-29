@@ -6,7 +6,7 @@ import './App.css';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Tower compiler="Typescript" framework="react"/>
+      <Tower/>
     </div>
   );
 }
