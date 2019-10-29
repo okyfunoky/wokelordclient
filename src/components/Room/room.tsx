@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './style.css';
 
 export interface RoomProps { 
     name: string,
@@ -14,6 +15,6 @@ export default class Room extends React.Component<RoomProps, {}> {
     }
     
     render() {
-        return <h1>Room {this.state.name} has {this.state.tenants.length} tenants</h1>;
+        return <h6 className="room">Room {this.state.name} has {this.state.tenants.length} tenants</h6>;
     }
 }

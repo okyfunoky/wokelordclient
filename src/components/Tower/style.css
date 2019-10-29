@@ -1,0 +1,10 @@
+.tower {
+    background-color: salmon;
+    border: 5px solid rgb(111,41,97);
+    border-radius: .5em;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+    text-align: center;
+}
