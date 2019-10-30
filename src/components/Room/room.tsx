@@ -15,6 +15,6 @@ export default class Room extends React.Component<RoomProps, {}> {
     }
     
     render() {
-        return <h6 className="room">Room {this.state.name} has {this.state.tenants.length} tenants</h6>;
+        return <div className="room">{this.state.name} has {this.state.tenants.length} tenants</div>;
     }
 }

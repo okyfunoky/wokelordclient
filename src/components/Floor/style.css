@@ -5,4 +5,7 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
+    height: 120px;
+    box-sizing: border-box;
+    justify-content: space-around;
 }

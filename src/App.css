@@ -2,8 +2,14 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  align-content: flex-end;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg");
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }

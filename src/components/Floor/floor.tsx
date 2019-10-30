@@ -20,7 +20,7 @@ export default class Tower extends React.Component<FloorProps, {}> {
 
         return (
             <div className="floor">
-            <h5>Floor {this.state.number} has {this.state.rooms.length}</h5>
+            
             {this.state.rooms.map((room)=>{
                 return <Room name={room} tenants={fillerTenants}></Room>
             })}
