@@ -1,19 +1,28 @@
 import React, { Component } from "react";
 import Floor from '../Floor/floor';
 import './style.css';
+const api = require('../../util/api');
 
 export interface TowerProps { 
 
  }
 
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-export default class Tower extends React.Component<TowerProps, {}> {
+export default class Tower extends React.Component<TowerProps> {
     state = {
-        floors: [1,2,3,4,5,6],
+        floors: [1,2],
+        name: "newTower",
+        money: 0,
     }
     
+    addRoom(){
+        let topFloor = this.state.floors[this.state.floors.length];
+        let newFloor = topFloor+1;
+        api.buildFloor();
+        
+    }
+
     render() {
+        this.addRoom();
         let testRooms = ["Office", "Appartment","Restaurant","Gym"]
         return (
             

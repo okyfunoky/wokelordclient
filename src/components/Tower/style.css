@@ -4,9 +4,8 @@
     border-radius: .5em;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 66%;
-    height: 75%;
     text-align: center;
     position: fixed;
     bottom: 0;
