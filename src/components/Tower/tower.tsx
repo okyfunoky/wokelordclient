@@ -20,13 +20,15 @@ export default class Tower extends React.Component<TowerProps> {
     async componentDidMount(){
         //callDB
         let res = await api.getTower(this.state.name);
-        console.log(res.data[0].floors);
+        
         let newFloors = Array<any>();
 
-        res.data[0].floors.forEach((floor: any) => {
-            newFloors.push(floor);
-        });
-
+        if(res.data[0].floors){
+            console.log(res.data[0].floors);
+            res.data[0].floors.forEach((floor: any) => {
+                newFloors.push(floor);
+            });
+        }
         this.setState({floors: newFloors})
     }
 
@@ -42,14 +44,17 @@ export default class Tower extends React.Component<TowerProps> {
             }
             
             let newFloors = Array<number>();
-            let newFloorJson = await api.buildFloor(this.state.name, newFloor);
-            console.log(newFloorJson);
-    
+            let towerJson = await api.buildFloor(this.state.name, newFloor);
+            console.log("Tower Json...")
+            console.log(towerJson);
+
+            let newlyBuiltFloor = towerJson.data.floors[newFloor];
+            console.log(newlyBuiltFloor)
             this.state.floors.forEach((floor)=>{
                 newFloors.push(floor);
             })
     
-            newFloors.push(newFloor);
+            newFloors.push(newlyBuiltFloor);
             this.setState({floorsAdded: true});
             this.setState({floors: newFloors});
     }
@@ -65,7 +70,7 @@ export default class Tower extends React.Component<TowerProps> {
             <div className="tower">
                 <NewFloorButton onClick={this.handleAddFloor}></NewFloorButton>
                 {this.state.floors.map((floor)=>{
-                    return <Floor number={floor} rooms={floor.rooms}></Floor>
+                    return <Floor number={floor.number} rooms={floor.rooms}></Floor>
                 })}
             </div>
         )
