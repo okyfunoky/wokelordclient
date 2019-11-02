@@ -32,7 +32,7 @@ export default class Tower extends React.Component<TowerProps> {
 
     addFloor = async() => {
             console.log(this.state.floors.length)
-            let topFloor: number = this.state.floors[this.state.floors.length];
+            let topFloor: number = this.state.floors[this.state.floors.length-1];
             console.log(topFloor)
             let newFloor: number = topFloor+1;
             let newFloors = Array<number>();
