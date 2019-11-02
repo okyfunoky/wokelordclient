@@ -4,29 +4,58 @@ import './style.css';
 const api = require('../../util/api');
 
 export interface TowerProps { 
-
+    name: string
  }
 
 export default class Tower extends React.Component<TowerProps> {
     state = {
-        floors: [1,2],
-        name: "newTower",
+        floors: [],
+        name: this.props.name,
         money: 0,
+        floorsAdded: false,
     }
     
-    addRoom(){
-        let topFloor = this.state.floors[this.state.floors.length];
-        let newFloor = topFloor+1;
-        api.buildFloor();
-        
+    async componentDidMount(){
+        //callDB
+        let res = await api.getTower(this.state.name);
+        console.log(res.data[0].floors);
+        let newFloors = Array<Number>();
+
+        res.data[0].floors.forEach((floor: { number: any; }) => {
+            newFloors.push(floor.number);
+        });
+
+        this.setState({floors: newFloors})
+    }
+
+    async addFloor() {
+            console.log(this.state.floors.length)
+            let topFloor: number = this.state.floors[this.state.floors.length];
+            console.log(topFloor)
+            let newFloor: number = topFloor+1;
+            let newFloors = Array<number>();
+            let newFloorJson = await api.buildFloor(this.state.name, newFloor);
+            console.log(newFloorJson);
+    
+            this.state.floors.forEach((floor)=>{
+                newFloors.push(floor);
+            })
+    
+            newFloors.push(newFloor);
+            this.setState({floorsAdded: true});
+            this.setState({floors: newFloors});
+    }
+
+    handleAddFloor(){
+        console.log(this)
     }
 
     render() {
-        this.addRoom();
         let testRooms = ["Office", "Appartment","Restaurant","Gym"]
         return (
             
             <div className="tower">
+                <button onClick={()=> this.addFloor}>Add a Floor</button>
                 {this.state.floors.reverse().map((floor)=>{
                     return <Floor number={floor} rooms={testRooms}></Floor>
                 })}

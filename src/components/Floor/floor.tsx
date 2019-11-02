@@ -9,7 +9,7 @@ export interface FloorProps {
 
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the '{}' type.
-export default class Tower extends React.Component<FloorProps, {}> {
+export default class Floor extends React.Component<FloorProps, {}> {
     state = {
         number: this.props.number,
         rooms: this.props.rooms
