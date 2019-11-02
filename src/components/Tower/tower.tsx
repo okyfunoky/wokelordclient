@@ -11,7 +11,7 @@ export interface TowerProps {
 
 export default class Tower extends React.Component<TowerProps> {
     state = {
-        floors: [],
+        floors: Array<any>(),
         name: this.props.name,
         money: 0,
         floorsAdded: false,
@@ -21,10 +21,10 @@ export default class Tower extends React.Component<TowerProps> {
         //callDB
         let res = await api.getTower(this.state.name);
         console.log(res.data[0].floors);
-        let newFloors = Array<Number>();
+        let newFloors = Array<any>();
 
-        res.data[0].floors.forEach((floor: { number: any; }) => {
-            newFloors.push(floor.number);
+        res.data[0].floors.forEach((floor: any) => {
+            newFloors.push(floor);
         });
 
         this.setState({floors: newFloors})
@@ -32,9 +32,15 @@ export default class Tower extends React.Component<TowerProps> {
 
     addFloor = async() => {
             console.log(this.state.floors.length)
-            let topFloor: number = this.state.floors[this.state.floors.length-1];
+            let topFloor: any = this.state.floors[this.state.floors.length-1];
             console.log(topFloor)
-            let newFloor: number = topFloor+1;
+            let newFloor;
+            if(topFloor){
+                newFloor = topFloor.number+1;
+            }else{
+                newFloor = 0;
+            }
+            
             let newFloors = Array<number>();
             let newFloorJson = await api.buildFloor(this.state.name, newFloor);
             console.log(newFloorJson);
@@ -58,8 +64,8 @@ export default class Tower extends React.Component<TowerProps> {
         return (
             <div className="tower">
                 <NewFloorButton onClick={this.handleAddFloor}></NewFloorButton>
-                {this.state.floors.reverse().map((floor)=>{
-                    return <Floor number={floor} rooms={testRooms}></Floor>
+                {this.state.floors.map((floor)=>{
+                    return <Floor number={floor} rooms={floor.rooms}></Floor>
                 })}
             </div>
         )

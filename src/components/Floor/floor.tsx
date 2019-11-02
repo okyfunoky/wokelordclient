@@ -15,9 +15,15 @@ export default class Floor extends React.Component<FloorProps, {}> {
         rooms: this.props.rooms
     }
 
+    checkRooms = ()=>{
+        if(!this.state.rooms){
+            this.state.rooms = [];
+        }
+    }
+    
     render() {
         let fillerTenants = ["Bill","Joe","Mary"]
-
+        this.checkRooms();
         return (
             <div className="floor">
             
