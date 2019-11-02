@@ -70,7 +70,7 @@ export default class Tower extends React.Component<TowerProps> {
             <div className="tower">
                 <NewFloorButton onClick={this.handleAddFloor}></NewFloorButton>
                 {this.state.floors.map((floor)=>{
-                    return <Floor number={floor.number} rooms={floor.rooms}></Floor>
+                    return <Floor number={floor.number} rooms={floor.rooms} _id={floor._id}></Floor>
                 })}
             </div>
         )

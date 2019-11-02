@@ -10,3 +10,7 @@ export function buildFloor(towerName, floorNumber){
 export async function getTower(towerName){
     return axios.get(url + `/game/loadtower/${towerName}`)
 }
+
+export function buildRoomOnFloor(towerName, floorId, roomName, roomType){
+    return axios.post(url + `/game/buildroom/${towerName}/${floorId}/:${roomName}/:${roomType}`);
+}
