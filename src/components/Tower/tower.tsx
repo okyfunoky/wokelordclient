@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Floor from '../Floor/floor';
+import newFloorButton from '../NewFloorButton/NewFloorButton'
 import './style.css';
+import NewFloorButton from "../NewFloorButton/NewFloorButton";
 const api = require('../../util/api');
 
 export interface TowerProps { 
@@ -28,7 +30,7 @@ export default class Tower extends React.Component<TowerProps> {
         this.setState({floors: newFloors})
     }
 
-    async addFloor() {
+    addFloor = async() => {
             console.log(this.state.floors.length)
             let topFloor: number = this.state.floors[this.state.floors.length];
             console.log(topFloor)
@@ -46,16 +48,16 @@ export default class Tower extends React.Component<TowerProps> {
             this.setState({floors: newFloors});
     }
 
-    handleAddFloor(){
+    handleAddFloor = () =>{
         console.log(this)
+        this.addFloor();
     }
 
     render() {
         let testRooms = ["Office", "Appartment","Restaurant","Gym"]
         return (
-            
             <div className="tower">
-                <button onClick={()=> this.addFloor}>Add a Floor</button>
+                <NewFloorButton onClick={this.handleAddFloor}></NewFloorButton>
                 {this.state.floors.reverse().map((floor)=>{
                     return <Floor number={floor} rooms={testRooms}></Floor>
                 })}
