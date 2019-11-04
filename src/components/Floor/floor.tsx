@@ -6,7 +6,6 @@ const api = require('../../util/api');
 
 export interface FloorProps {
     number: number;
-    rooms: Array<any>;
     _id: string,
     towerName: string,
 }
@@ -16,8 +15,15 @@ export interface FloorProps {
 export default class Floor extends React.Component<FloorProps, {}> {
     state = {
         number: this.props.number,
-        rooms: this.props.rooms,
+        rooms: Array<any>(),
         _id: this.props._id,
+    }
+
+    componentDidMount = async() =>{
+        let rooms = await api.getFloorRooms(this.state._id);
+        console.log(rooms);
+
+        this.setState({rooms: rooms.data});
     }
 
     addRoom = async () => {

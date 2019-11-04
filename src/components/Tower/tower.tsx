@@ -21,29 +21,15 @@ export default class Tower extends React.Component<TowerProps> {
         //callDB
         let res = await api.getTower(this.state.name);
         
-        let newFloors = await this.getNewFloors(res.data[0].floors);
-        console.log(newFloors);
-        //need to sort floors by number now, since order isn't syncronous
+        let newFloors = Array<any>();
+
+        if(res.data[0].floors){
+            console.log(res.data[0].floors);
+            res.data[0].floors.forEach((floor: any) => {
+                newFloors.push(floor);
+            });
+        }
         this.setState({floors: newFloors})
-    }
-
-    getNewFloors = async (floors: any) => {
-        
-
-        return Promise.all(
-            floors.map((floor:any) => api.getFloorRooms(floor._id))
-        )
-        
-        // console.log(floors);
-        // let newFloors = await floors.map(async (floor: any) => {
-        //     //newFloors.push(floor);
-        //     let newFloor = await api.getFloorRooms(floor._id);
-        //     console.log("new floor");
-        //     console.log(newFloor);
-        //     return newFloor.data;
-        // });
-
-        // return newFloors;
     }
 
     addFloor = async() => {
@@ -84,7 +70,7 @@ export default class Tower extends React.Component<TowerProps> {
             <div className="tower">
                 <NewFloorButton onClick={this.handleAddFloor}></NewFloorButton>
                 {this.state.floors.map((floor)=>{
-                    return <Floor number={floor.number} rooms={floor.rooms} _id={floor._id} towerName={this.state.name}></Floor>
+                    return <Floor number={floor.number} _id={floor._id} towerName={this.state.name}></Floor>
                 })}
             </div>
         )
