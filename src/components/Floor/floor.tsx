@@ -20,10 +20,10 @@ export default class Floor extends React.Component<FloorProps, {}> {
     }
 
     componentDidMount = async() =>{
-        let rooms = await api.getFloorRooms(this.state._id);
-        console.log(rooms);
-
-        this.setState({rooms: rooms.data});
+        let floor = await api.getFloorRooms(this.state._id);
+        console.log("Rooms Obj");
+        console.log(floor);
+        this.setState({rooms: floor.data[0].rooms});
     }
 
     addRoom = async () => {
