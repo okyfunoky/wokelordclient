@@ -4,6 +4,7 @@ import './style.css';
 export interface RoomProps { 
     name: string,
     tenants: any[],
+    floorId: string,
  }
 
 // 'HelloProps' describes the shape of props.

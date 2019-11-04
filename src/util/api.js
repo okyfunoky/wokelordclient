@@ -11,6 +11,11 @@ export async function getTower(towerName){
     return axios.get(url + `/game/loadtower/${towerName}`)
 }
 
+export async function getFloorRooms(floorId){
+    return axios.get(url + `/game/loadrooms/${floorId}`);
+}
+
 export function buildRoomOnFloor(towerName, floorId, roomName, roomType){
     return axios.post(url + `/game/buildroom/${towerName}/${floorId}/:${roomName}/:${roomType}`);
 }
+

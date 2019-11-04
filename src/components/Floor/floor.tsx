@@ -6,8 +6,9 @@ const api = require('../../util/api');
 
 export interface FloorProps {
     number: number;
-    rooms: string[];
-    _id: string
+    rooms: Array<any>;
+    _id: string,
+    towerName: string,
 }
 
 // 'HelloProps' describes the shape of props.
@@ -19,13 +20,12 @@ export default class Floor extends React.Component<FloorProps, {}> {
         _id: this.props._id,
     }
 
-    checkRooms = () => {
-    }
-
     addRoom = async () => {
-        let newFloor = await api.buildRoomOnFloor("newTower", this.state._id,"newRoom","newRoomType");
+        let newFloor = await api.buildRoomOnFloor(this.props.towerName, this.state._id,"newRoom","newRoomType");
         console.log(newFloor);
-        let newRoom = newFloor.data.rooms[0]
+        let newRoom = newFloor.data.rooms[0];
+        console.log("New room....");
+        
         console.log(newRoom);
     
         let newRooms = this.state.rooms.map((room)=>{
@@ -42,12 +42,12 @@ export default class Floor extends React.Component<FloorProps, {}> {
 
     render() {
         let fillerTenants = ["Bill", "Joe", "Mary"]
-        this.checkRooms();
+        
         return (
             <div className="floor">
                 <NewRoomButton onClick={this.addRoom}></NewRoomButton>
                 {this.state.rooms.map((room) => {
-                    return <Room name={room} tenants={fillerTenants}></Room>
+                    return <Room name={room.name} tenants={fillerTenants} floorId={this.state._id}></Room>
                 })}
             </div>
         )
