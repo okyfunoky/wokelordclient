@@ -10,7 +10,6 @@ export interface FloorProps {
     towerName: string,
 }
 
-// 'HelloProps' describes the shape of props.
 // State is never set so we use the '{}' type.
 export default class Floor extends React.Component<FloorProps, {}> {
     state = {
@@ -27,23 +26,14 @@ export default class Floor extends React.Component<FloorProps, {}> {
     }
 
     addRoom = async () => {
-        let newFloor = await api.buildRoomOnFloor(this.props.towerName, this.state._id,"newRoom","newRoomType");
+        let newRoomName = "Test Room";
+        let newRoomType = "Office";
+        let newFloor = await api.buildRoomOnFloor(this.props.towerName, this.state._id, newRoomName, newRoomType);
         console.log(newFloor);
-        let newRoom = newFloor.data.rooms[0];
-        console.log("New room....");
-        
-        console.log(newRoom);
-    
-        let newRooms = this.state.rooms.map((room)=>{
-            return room;
-        })
-
-        console.log(newRooms);
-        newRooms.push(newRoom.name);
-
-        this.setState({ rooms: newRooms });
-
-        console.log(newFloor.data.rooms[0]);
+        let floor = await api.getFloorRooms(this.state._id);
+        console.log("New Floor Obj");
+        console.log(floor);
+        this.setState({rooms: floor.data[0].rooms});
     }
 
     render() {
@@ -53,7 +43,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
             <div className="floor">
                 <NewRoomButton onClick={this.addRoom}></NewRoomButton>
                 {this.state.rooms.map((room) => {
-                    return <Room name={room.name} tenants={fillerTenants} floorId={this.state._id}></Room>
+                    return <Room name={room.name} type={room.type} tenants={fillerTenants} floorId={this.state._id} _id={room._id}></Room>
                 })}
             </div>
         )

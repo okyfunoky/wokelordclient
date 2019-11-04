@@ -5,6 +5,8 @@ export interface RoomProps {
     name: string,
     tenants: any[],
     floorId: string,
+    type: string,
+    _id: string,
  }
 
 // 'HelloProps' describes the shape of props.
@@ -13,9 +15,10 @@ export default class Room extends React.Component<RoomProps, {}> {
     state = {
         name: this.props.name,
         tenants: this.props.tenants,
+        type: this.props.type,
     }
     
     render() {
-        return <div className="room">{this.state.name} has {this.state.tenants.length} tenants</div>;
+        return <div className="room">{this.state.name} is a {this.state.type} and has {this.state.tenants.length} tenants. ID is {this.props._id}</div>;
     }
 }

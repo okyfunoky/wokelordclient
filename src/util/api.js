@@ -16,6 +16,5 @@ export async function getFloorRooms(floorId){
 }
 
 export function buildRoomOnFloor(towerName, floorId, roomName, roomType){
-    return axios.post(url + `/game/buildroom/${towerName}/${floorId}/:${roomName}/:${roomType}`);
+    return axios.post(url + `/game/buildroom/${towerName}/${floorId}/${roomName}/${roomType}`);
 }
-
