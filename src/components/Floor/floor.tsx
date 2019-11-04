@@ -18,32 +18,46 @@ export default class Floor extends React.Component<FloorProps, {}> {
         _id: this.props._id,
     }
 
-    componentDidMount = async() =>{
+    componentDidMount = async () => {
         let floor = await api.getFloorRooms(this.state._id);
         console.log("Rooms Obj");
         console.log(floor);
-        this.setState({rooms: floor.data[0].rooms});
+        this.setState({ rooms: floor.data[0].rooms });
     }
 
     addRoom = async () => {
         let newRoomName = "Test Room";
-        let newRoomType = "Office";
-        let newFloor = await api.buildRoomOnFloor(this.props.towerName, this.state._id, newRoomName, newRoomType);
+        let newRoomType = "office";
+        let newRoomRent = 0;
+        let newRoomMaintenance = 0;
+        let newRoomHappiness = 0;
+        let newFloor = await api.buildRoomOnFloor(this.props.towerName, this.state._id, newRoomName, newRoomType, newRoomRent, newRoomMaintenance, newRoomHappiness);
         console.log(newFloor);
         let floor = await api.getFloorRooms(this.state._id);
         console.log("New Floor Obj");
         console.log(floor);
-        this.setState({rooms: floor.data[0].rooms});
+        this.setState({ rooms: floor.data[0].rooms });
     }
 
     render() {
         let fillerTenants = ["Bill", "Joe", "Mary"]
-        
+
         return (
             <div className="floor">
                 <NewRoomButton onClick={this.addRoom}></NewRoomButton>
                 {this.state.rooms.map((room) => {
-                    return <Room name={room.name} type={room.type} tenants={fillerTenants} floorId={this.state._id} _id={room._id}></Room>
+                    return  (
+                        <Room 
+                        name={room.name}
+                        type={room.type}
+                        tenants={fillerTenants} 
+                        floorId={this.state._id} 
+                        _id={room._id}
+                        happiness={room.happiness}
+                        rent={room.rent}
+                        maintenance={room.maintenance}
+                        />
+                    )
                 })}
             </div>
         )
