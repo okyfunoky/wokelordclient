@@ -9,7 +9,7 @@
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e3/Seattle_Kerry_Park_Skyline.jpg");
   height: 100%;
   width: 100%;
-  position: fixed;
   left: 0;
   bottom: 0;
+  overflow: auto;
 }
