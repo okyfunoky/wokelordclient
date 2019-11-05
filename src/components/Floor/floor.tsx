@@ -48,7 +48,6 @@ export default class Floor extends React.Component<FloorProps, {}> {
     }
 
     render() {
-        let fillerTenants = ["Bill", "Joe", "Mary"]
         const menuClassName = this.state.showMenu ? "displayMenu" : "hideMenu"
 
 
@@ -63,7 +62,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
                         <Room
                             name={room.name}
                             type={room.type}
-                            tenants={fillerTenants}
+                            tenants={room.tenants}
                             floorId={this.state._id}
                             _id={room._id}
                             happiness={room.happiness}
