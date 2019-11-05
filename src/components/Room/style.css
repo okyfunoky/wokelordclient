@@ -6,3 +6,48 @@
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
 }
+
+.office {
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    background-color:gray;
+    border: 2px solid rgba(111,41,97,.5);
+    box-sizing: border-box;
+}
+
+.condo {
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    background-color:gray;
+    border: 2px solid rgba(111,41,97,.5);
+    box-sizing: border-box;
+}
+
+.restaurant {
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    background-color: blue;
+    border: 2px solid rgba(111,41,97,.5);
+    box-sizing: border-box;
+}
+
+.entertainment {
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    background-color:pink;
+    border: 2px solid rgba(111,41,97,.5);
+    box-sizing: border-box;
+}
+
+.apartment {
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    background-color: green;
+    border: 2px solid rgba(111,41,97,.5);
+    box-sizing: border-box;
+}
