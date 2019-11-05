@@ -2,6 +2,7 @@ import * as React from 'react';
 import Room from '../Room/room';
 import NewRoomButton from "../NewRoomButton/NewRoomButton";
 import './style.css';
+import RoomBuildMenu from '../RoomBuildMenu/roombuildmenu';
 const api = require('../../util/api');
 
 export interface FloorProps {
@@ -16,6 +17,16 @@ export default class Floor extends React.Component<FloorProps, {}> {
         number: this.props.number,
         rooms: Array<any>(),
         _id: this.props._id,
+        showMenu: false,
+    }
+
+    toggleMenu = () => {
+        if(this.state.showMenu)
+        {
+            this.setState({showMenu: false})
+        }else{
+            this.setState({showMenu: true})
+        }
     }
 
     componentDidMount = async () => {
@@ -25,9 +36,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
         this.setState({ rooms: floor.data[0].rooms });
     }
 
-    addRoom = async () => {
-        let newRoomName = "Test Room";
-        let newRoomType = "office";
+    addRoom = async (newRoomName: string, newRoomType: string) => {
         let newRoomRent = 0;
         let newRoomMaintenance = 0;
         let newRoomHappiness = 0;
@@ -41,10 +50,15 @@ export default class Floor extends React.Component<FloorProps, {}> {
 
     render() {
         let fillerTenants = ["Bill", "Joe", "Mary"]
+        const menuClassName = this.state.showMenu ? "displayMenu" : "hideMenu"
+
 
         return (
             <div className="floor">
-                <NewRoomButton onClick={this.addRoom}></NewRoomButton>
+                <NewRoomButton onClick={this.toggleMenu}></NewRoomButton>
+                <div className={menuClassName}>
+                    <RoomBuildMenu clickHandler={this.addRoom}></RoomBuildMenu>
+                </div>
                 {this.state.rooms.map((room) => {
                     return  (
                         <Room 

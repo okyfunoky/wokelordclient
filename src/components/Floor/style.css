@@ -9,3 +9,11 @@
     box-sizing: border-box;
     justify-content: space-around;
 }
+
+.displayMenu {
+    
+}
+
+.hideMenu {
+    display: none;
+}
