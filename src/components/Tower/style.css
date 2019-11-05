@@ -1,13 +1,19 @@
-.tower {
+.innerTower {
     background-color: salmon;
     border: 5px solid rgb(111,41,97);
     border-radius: .5em;
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    width: 66%;
+    width: 100%;
     text-align: center;
     bottom: 0;
+}
+
+.outerTower {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
 }
 
 .floors {

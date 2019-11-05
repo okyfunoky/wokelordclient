@@ -68,9 +68,9 @@ export default class Tower extends React.Component<TowerProps> {
     render() {
         let testRooms = ["Office", "Appartment", "Restaurant", "Gym"]
         return (
-            // <div>
-               /* { <NewFloorButton onClick={this.handleAddFloor}></NewFloorButton> }*/
-                <div className="tower">
+            <div className="outerTower">
+                <NewFloorButton onClick={this.addFloor}></NewFloorButton>
+                <div className="innerTower">
                     <Elevator position="left" clickHandler={() => { }}></Elevator>
                     <div className="floors">
                         {this.state.floors.map((floor) => {
@@ -79,7 +79,7 @@ export default class Tower extends React.Component<TowerProps> {
                     </div>
                     <Elevator position="right" clickHandler={() => { }}></Elevator>
                 </div>
-            // </div>
+             </div>
         )
     }
 }

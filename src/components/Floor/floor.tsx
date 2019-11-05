@@ -21,11 +21,10 @@ export default class Floor extends React.Component<FloorProps, {}> {
     }
 
     toggleMenu = () => {
-        if(this.state.showMenu)
-        {
-            this.setState({showMenu: false})
-        }else{
-            this.setState({showMenu: true})
+        if (this.state.showMenu) {
+            this.setState({ showMenu: false })
+        } else {
+            this.setState({ showMenu: true })
         }
     }
 
@@ -60,16 +59,16 @@ export default class Floor extends React.Component<FloorProps, {}> {
                     <RoomBuildMenu clickHandler={this.addRoom}></RoomBuildMenu>
                 </div>
                 {this.state.rooms.map((room) => {
-                    return  (
-                        <Room 
-                        name={room.name}
-                        type={room.type}
-                        tenants={fillerTenants} 
-                        floorId={this.state._id} 
-                        _id={room._id}
-                        happiness={room.happiness}
-                        rent={room.rent}
-                        maintenance={room.maintenance}
+                    return (
+                        <Room
+                            name={room.name}
+                            type={room.type}
+                            tenants={fillerTenants}
+                            floorId={this.state._id}
+                            _id={room._id}
+                            happiness={room.happiness}
+                            rent={room.rent}
+                            maintenance={room.maintenance}
                         />
                     )
                 })}
