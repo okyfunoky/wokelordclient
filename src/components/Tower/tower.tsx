@@ -57,6 +57,7 @@ export default class Tower extends React.Component<TowerProps> {
         })
 
         newFloors.push(newlyBuiltFloor);
+        this.handleUpdateGameState();
         this.setState({ floorsAdded: true });
         this.setState({ floors: newFloors });
     }
@@ -79,7 +80,7 @@ export default class Tower extends React.Component<TowerProps> {
                     <Elevator position="left" clickHandler={() => { }}></Elevator>
                     <div className="floors">
                         {this.state.floors.map((floor) => {
-                            return <Floor number={floor.number} _id={floor._id} towerName={this.state.name}></Floor>
+                            return <Floor number={floor.number} _id={floor._id} towerName={this.state.name} updateGameState={this.props.updateGameState}></Floor>
                         })}
                     </div>
                     <Elevator position="right" clickHandler={() => { }}></Elevator>

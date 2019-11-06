@@ -9,6 +9,7 @@ export interface FloorProps {
     number: number;
     _id: string,
     towerName: string,
+    updateGameState: any
 }
 
 // State is never set so we use the '{}' type.
@@ -45,6 +46,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
         console.log("New Floor Obj");
         console.log(floor);
         this.setState({ rooms: floor.data[0].rooms });
+        this.props.updateGameState();
     }
 
     render() {
