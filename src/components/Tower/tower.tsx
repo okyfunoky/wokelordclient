@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import Floor from '../Floor/floor';
 import newFloorButton from '../NewFloorButton/NewFloorButton'
 import './style.css';
@@ -7,7 +7,8 @@ import Elevator from "../Elevator/elevator"
 const api = require('../../util/api');
 
 export interface TowerProps {
-    name: string
+    name: string,
+    updateGameState: any
 }
 
 export default class Tower extends React.Component<TowerProps> {
@@ -63,6 +64,10 @@ export default class Tower extends React.Component<TowerProps> {
     handleAddFloor = () => {
         console.log(this)
         this.addFloor();
+    }
+
+    handleUpdateGameState(){
+        this.props.updateGameState();
     }
 
     render() {

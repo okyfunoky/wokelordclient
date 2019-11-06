@@ -2,30 +2,35 @@ import * as React from 'react';
 import './style.css';
 
 export interface GamebarProps {
-    text: string
+    gameState: {
+        money: number,
+        population: number,
+        happiness: number,
+        starLevel: number,
+    }
 }
 
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the '{}' type.
-export default class Tower extends React.Component<GamebarProps, {}> {
+export default class GameBar extends React.Component<GamebarProps, {}> {
     state = {
-        text: this.props.text
+        money: 0
     }
 
     render() {
         return (
             <div className="gamebar">
                 <div className="money">
-
+                    {this.props.gameState.money}
                 </div>
-                <div className="repuation">
-
+                <div className="happiness">
+                    {this.props.gameState.happiness}
                 </div>
                 <div className="stars">
-
+                    {this.props.gameState.starLevel}
                 </div>
-                <div className="trackedtenants">
-
+                <div className="population">
+                    {this.props.gameState.population}
                 </div>
             </div>
         )
