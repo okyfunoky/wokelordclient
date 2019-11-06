@@ -1,0 +1,22 @@
+.gamebar {
+    background-color: gray;
+    width: 15%;
+    top: 50;
+    position: fixed;
+    top: auto;
+    left: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.gamebarItem {
+
+    align-self: flex-start;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.money {
+    margin-top: 1em;
+}

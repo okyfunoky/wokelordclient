@@ -20,18 +20,23 @@ export default class GameBar extends React.Component<GamebarProps, {}> {
     render() {
         return (
             <div className="gamebar">
-                <div className="money">
+                <div className="money gamebarItem">
+                    <span>Funds: </span>
                     {this.props.gameState.money}
                 </div>
-                <div className="happiness">
+                <div className="happiness gamebarItem">
+                    <span>Happiness: </span>
                     {this.props.gameState.happiness}
                 </div>
-                <div className="stars">
+                <div className="gamebarItem">
+                    <span>Star Level: </span>
                     {this.props.gameState.starLevel}
                 </div>
-                <div className="population">
+                <div className="gamebarItem">
+                    <span>Population: </span>
                     {this.props.gameState.population}
                 </div>
+                <button>Proceed to Next Month</button>
             </div>
         )
     }
