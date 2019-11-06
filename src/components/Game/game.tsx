@@ -28,7 +28,7 @@ export default class Game extends React.Component<GameProps, {}> {
 
     render() {
         return (
-            <div>
+            <div className="game">
                 <GameBar gameState={this.state}></GameBar>
                 <Tower name={this.state.towerName} updateGameState={this.updateGameState}/>
             </div>

@@ -53,10 +53,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
 
         return (
             <div className="floor">
-                <NewRoomButton onClick={this.toggleMenu}></NewRoomButton>
-                <div className={menuClassName}>
-                    <RoomBuildMenu clickHandler={this.addRoom}></RoomBuildMenu>
-                </div>
+
                 {this.state.rooms.map((room) => {
                     return (
                         <Room
@@ -71,6 +68,10 @@ export default class Floor extends React.Component<FloorProps, {}> {
                         />
                     )
                 })}
+                <NewRoomButton onClick={this.toggleMenu}></NewRoomButton>
+                <div className={menuClassName}>
+                    <RoomBuildMenu clickHandler={this.addRoom}></RoomBuildMenu>
+                </div>
             </div>
         )
     }
