@@ -21,8 +21,9 @@ export default class Game extends React.Component<GameProps, {}> {
 
     updateGameState = async () => {
         let pop = await api.getPopulation(this.state.towerName);
+        let money = await api.getMoney(this.state.towerName);
         console.log(pop.data);
-        this.setState({ population: pop.data })
+        this.setState({ population: pop.data, money: money.data })
     }
 
     componentDidMount() {
