@@ -31,10 +31,15 @@ export default class Game extends React.Component<GameProps, {}> {
         this.updateGameState();
     }
 
+    endMonth = async () => {
+        let newMoney = await api.endMonth(this.state.towerName);
+        let newState = await this.updateGameState();
+    }
+
     render() {
         return (
             <div className="game">
-                <GameBar gameState={this.state}></GameBar>
+                <GameBar gameState={this.state} endMonthHandler={this.endMonth}></GameBar>
                 <Tower name={this.state.towerName} updateGameState={this.updateGameState} />
             </div>
         )

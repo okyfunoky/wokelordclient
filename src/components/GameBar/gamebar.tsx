@@ -7,7 +7,8 @@ export interface GamebarProps {
         population: number,
         happiness: number,
         starLevel: number,
-    }
+    },
+    endMonthHandler: any
 }
 
 // 'HelloProps' describes the shape of props.
@@ -36,7 +37,7 @@ export default class GameBar extends React.Component<GamebarProps, {}> {
                     <span>Population: </span>
                     {this.props.gameState.population}
                 </div>
-                <button>Proceed to Next Month</button>
+                <button onClick={this.props.endMonthHandler}>Proceed to Next Month</button>
             </div>
         )
     }

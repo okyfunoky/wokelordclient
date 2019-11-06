@@ -19,6 +19,10 @@ export async function getMoney(towerName) {
     return axios.get(url + `/game/getmoney/${towerName}`)
 }
 
+export async function endMonth(towerName) {
+    return axios.get(url + `/game/updatemonth/${towerName}`)
+}
+
 export async function getFloorRooms(floorId) {
     return axios.get(url + `/game/loadrooms/${floorId}`);
 }
