@@ -2,7 +2,8 @@ import * as React from 'react';
 import Room from '../Room/room';
 import NewRoomButton from "../NewRoomButton/NewRoomButton";
 import './style.css';
-import RoomBuildMenu from '../RoomBuildMenu/roombuildmenu';
+import { Modal, Dialog, DialogTitle, DialogContent, MenuItem, Menu } from '@material-ui/core';
+import { throwStatement } from '@babel/types';
 const api = require('../../util/api');
 
 export interface FloorProps {
@@ -70,10 +71,8 @@ export default class Floor extends React.Component<FloorProps, {}> {
                         />
                     )
                 })}
-                <NewRoomButton onClick={this.toggleMenu}></NewRoomButton>
-                <div className={menuClassName}>
-                    <RoomBuildMenu clickHandler={this.addRoom}></RoomBuildMenu>
-                </div>
+                <NewRoomButton clickHandler={this.addRoom}></NewRoomButton>
+
             </div>
         )
     }

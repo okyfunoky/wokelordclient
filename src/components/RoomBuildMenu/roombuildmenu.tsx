@@ -2,7 +2,6 @@ import React from 'react';
 import RoomBuildButton from '../RoomBuildButton/roombuildbutton'
 import './style.css';
 
-
 interface RoomBuildMenuProps {
     clickHandler: any
 }
