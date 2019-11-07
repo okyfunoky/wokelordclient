@@ -31,6 +31,13 @@ export default class Tower extends React.Component<TowerProps> {
                 newFloors.push(floor);
             });
         }
+        console.log(newFloors);
+
+        newFloors = newFloors.sort((a,b)=>{
+            return a.number - b.number;
+        })
+        console.log(newFloors);
+
         this.setState({ floors: newFloors })
     }
 
@@ -50,7 +57,7 @@ export default class Tower extends React.Component<TowerProps> {
         console.log("Tower Json...")
         console.log(towerJson);
 
-        let newlyBuiltFloor = towerJson.data.floors[newFloor];
+        let newlyBuiltFloor = towerJson.data.floors[towerJson.data.floors.length-1];
         console.log(newlyBuiltFloor)
         this.state.floors.forEach((floor) => {
             newFloors.push(floor);
