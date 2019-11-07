@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/wokelordclient/static/css/main.e8ff9fc0.chunk.css",
-    "main.js": "/wokelordclient/static/js/main.9dadb91f.chunk.js",
-    "main.js.map": "/wokelordclient/static/js/main.9dadb91f.chunk.js.map",
+    "main.css": "/wokelordclient/static/css/main.c682399d.chunk.css",
+    "main.js": "/wokelordclient/static/js/main.3c726e9e.chunk.js",
+    "main.js.map": "/wokelordclient/static/js/main.3c726e9e.chunk.js.map",
     "runtime-main.js": "/wokelordclient/static/js/runtime-main.59c3f623.js",
     "runtime-main.js.map": "/wokelordclient/static/js/runtime-main.59c3f623.js.map",
     "static/js/2.a804f4fb.chunk.js": "/wokelordclient/static/js/2.a804f4fb.chunk.js",
     "static/js/2.a804f4fb.chunk.js.map": "/wokelordclient/static/js/2.a804f4fb.chunk.js.map",
     "index.html": "/wokelordclient/index.html",
-    "precache-manifest.1a63993f6480adb3dca1f90ba1742aa5.js": "/wokelordclient/precache-manifest.1a63993f6480adb3dca1f90ba1742aa5.js",
+    "precache-manifest.fe64357f4766e5047262faebb8172291.js": "/wokelordclient/precache-manifest.fe64357f4766e5047262faebb8172291.js",
     "service-worker.js": "/wokelordclient/service-worker.js",
-    "static/css/main.e8ff9fc0.chunk.css.map": "/wokelordclient/static/css/main.e8ff9fc0.chunk.css.map",
-    "static/media/style.css": "/wokelordclient/static/media/Crane-large-pixel-clipart-design-clipartsfree-removebg-preview.0b169ba5.png"
+    "static/css/main.c682399d.chunk.css.map": "/wokelordclient/static/css/main.c682399d.chunk.css.map",
+    "static/media/style.css": "/wokelordclient/static/media/ezgif.com-crop.a9bafd92.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.59c3f623.js",
     "static/js/2.a804f4fb.chunk.js",
-    "static/css/main.e8ff9fc0.chunk.css",
-    "static/js/main.9dadb91f.chunk.js"
+    "static/css/main.c682399d.chunk.css",
+    "static/js/main.3c726e9e.chunk.js"
   ]
 }
