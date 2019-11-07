@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wokelordclient/precache-manifest.5db22933a8a0a614a2c51699c90afa0a.js"
+  "/wokelordclient/precache-manifest.546c37f4c9f4c104e9238748a0d958f3.js"
 );
 
 self.addEventListener('message', (event) => {
