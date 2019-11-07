@@ -58,7 +58,6 @@ export default class Tower extends React.Component<TowerProps> {
 
         newFloors.push(newlyBuiltFloor);
         this.handleUpdateGameState();
-        this.setState({ floorsAdded: true });
         this.setState({ floors: newFloors });
     }
 
