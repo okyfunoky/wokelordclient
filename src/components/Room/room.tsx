@@ -26,6 +26,6 @@ export default class Room extends React.Component<RoomProps, {}> {
     }
     
     render() {
-        return <div className={this.props.type}>{this.state.name} is a {this.state.type} and has {this.state.tenants.length} tenants. ID is {this.props._id}</div>;
+        return <div className={this.props.type}></div>;
     }
 }

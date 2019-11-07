@@ -14,6 +14,9 @@
     background-color:gray;
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
+    background-image: url('../../images/RoomGifs/ezgif.com-crop.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .condo {
@@ -44,10 +47,13 @@
 }
 
 .apartment {
-    width: 30%;
+    width: 26%;
     height: 100%;
     padding: 10px;
-    background-color: green;
+    background-color: blue;
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
+    background-image: url('../../images/RoomGifs/apartment.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
