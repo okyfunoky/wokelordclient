@@ -1,12 +1,11 @@
 import * as React from 'react';
 import './style.css'
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import RoomBuildMenu from '../RoomBuildMenu/roombuildmenu';
 
 interface NewRoomButtonProps {
-    clickHandler: any
+    clickHandler: any,
+    roomTypeList: Set<string>
 }
 
 const NewRoomButton: React.FC<NewRoomButtonProps> = (props) => {
@@ -23,7 +22,7 @@ const NewRoomButton: React.FC<NewRoomButtonProps> = (props) => {
   return (
     <div className="newRoomButton">
       <button  aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        Build Rooms
+        +
       </button>
       <Menu
         id="simple-menu"
@@ -32,7 +31,7 @@ const NewRoomButton: React.FC<NewRoomButtonProps> = (props) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-          <RoomBuildMenu clickHandler={props.clickHandler}></RoomBuildMenu>
+          <RoomBuildMenu roomTypeList={props.roomTypeList} clickHandler={props.clickHandler}></RoomBuildMenu>
       </Menu>
     </div>
   );

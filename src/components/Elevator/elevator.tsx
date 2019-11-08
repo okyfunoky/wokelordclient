@@ -9,7 +9,9 @@ interface ElevatorProps {
 const Elevator: React.FC<ElevatorProps> = (props) => {
   
     return (
-    <div className={props.position==="left" ? "leftElevator" : "rightElevator"}></div>
+    <div className={props.position==="left" ? "leftElevator" : "rightElevator"}>
+        <div className="elevatorCar">C</div>
+    </div>
   );
 }
 

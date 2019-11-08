@@ -8,7 +8,8 @@ const api = require('../../util/api');
 
 export interface TowerProps {
     name: string,
-    updateGameState: any
+    updateGameState: any,
+    availableRoomTypes: Set<string>
 }
 
 export default class Tower extends React.Component<TowerProps> {
@@ -78,7 +79,6 @@ export default class Tower extends React.Component<TowerProps> {
     }
 
     render() {
-        let testRooms = ["Office", "Appartment", "Restaurant", "Gym"]
         return (
             <div className="outerTower">
                 <NewFloorButton onClick={this.addFloor}></NewFloorButton>
@@ -86,7 +86,7 @@ export default class Tower extends React.Component<TowerProps> {
                     <Elevator position="left" clickHandler={() => { }}></Elevator>
                     <div className="floors">
                         {this.state.floors.map((floor) => {
-                            return <Floor number={floor.number} _id={floor._id} towerName={this.state.name} updateGameState={this.props.updateGameState}></Floor>
+                            return <Floor availableRoomTypes={this.props.availableRoomTypes} number={floor.number} _id={floor._id} towerName={this.state.name} updateGameState={this.props.updateGameState}></Floor>
                         })}
                     </div>
                     <Elevator position="right" clickHandler={() => { }}></Elevator>

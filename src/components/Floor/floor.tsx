@@ -10,7 +10,8 @@ export interface FloorProps {
     number: number;
     _id: string,
     towerName: string,
-    updateGameState: any
+    updateGameState: any,
+    availableRoomTypes: Set<string>
 }
 
 // State is never set so we use the '{}' type.
@@ -69,7 +70,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
                     )
                 })}
                 </div>
-                <NewRoomButton clickHandler={this.addRoom}></NewRoomButton>
+                <NewRoomButton roomTypeList={this.props.availableRoomTypes} clickHandler={this.addRoom}></NewRoomButton>
 
             </div>
         )
