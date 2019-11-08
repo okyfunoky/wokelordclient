@@ -35,6 +35,9 @@
     background-color: blue;
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
+    background-image: url('../../images/RoomGifs/restaurant.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .entertainment {
