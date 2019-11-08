@@ -51,12 +51,9 @@ export default class Floor extends React.Component<FloorProps, {}> {
     }
 
     render() {
-        const menuClassName = this.state.showMenu ? "displayMenu" : "hideMenu"
-
-
         return (
             <div className="floor">
-
+                <div className="rooms">
                 {this.state.rooms.map((room) => {
                     return (
                         <Room
@@ -71,6 +68,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
                         />
                     )
                 })}
+                </div>
                 <NewRoomButton clickHandler={this.addRoom}></NewRoomButton>
 
             </div>

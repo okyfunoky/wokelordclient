@@ -1,5 +1,5 @@
 .newRoomButton {
     height: 2em;
     width: 2em;
-    align-self: flex-end;
+    justify-self: flex-end;
 }

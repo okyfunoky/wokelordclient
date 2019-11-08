@@ -7,13 +7,9 @@
     flex-direction: row;
     height: 8em;
     box-sizing: border-box;
-    justify-content: flex-start;
 }
 
-.displayMenu {
-    
-}
-
-.hideMenu {
-    display: none;
+.rooms {
+    width: 100%;
+    display: flex;
 }

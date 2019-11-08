@@ -21,8 +21,8 @@ const NewRoomButton: React.FC<NewRoomButtonProps> = (props) => {
   };
 
   return (
-    <div>
-      <button className="newRoomButton" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+    <div className="newRoomButton">
+      <button  aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         Build Rooms
       </button>
       <Menu

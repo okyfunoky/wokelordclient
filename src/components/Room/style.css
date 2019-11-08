@@ -5,6 +5,7 @@
     background-color: rgba(111,41,97,.3);
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
+    justify-self: flex-start;
 }
 
 .office {
@@ -20,12 +21,15 @@
 }
 
 .condo {
-    width: 30%;
+    width: 32%;
     height: 100%;
     padding: 10px;
     background-color:gray;
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
+    background-image: url('../../images/RoomGifs/condo.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .restaurant {
@@ -36,7 +40,7 @@
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
     background-image: url('../../images/RoomGifs/restaurant.gif');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
@@ -50,7 +54,7 @@
 }
 
 .apartment {
-    width: 26%;
+    width: 20%;
     height: 100%;
     padding: 10px;
     background-color: blue;
