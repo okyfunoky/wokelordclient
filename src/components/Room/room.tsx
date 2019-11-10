@@ -27,24 +27,7 @@ const Room: React.FC<RoomProps> = (props) => {
 
     
     return (
-        <div className={props.type} onClick={handleClick}>
-            <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-            >
-                <div className="roomcontextmenu">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-            </Menu>
-        </div>
+        <div className={props.type} onClick={handleClick}></div>
     )
 }
 

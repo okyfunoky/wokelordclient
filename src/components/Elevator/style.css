@@ -20,4 +20,5 @@
     background-image: url('../../images/RoomGifs/elevator.gif');
     background-size: contain;
     background-repeat: no-repeat;
+    bottom: 1em;
 }

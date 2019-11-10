@@ -2,7 +2,6 @@
     background-color: lightslategray;
     border: 5px solid gray;
     border-radius: .5em;
-    padding: 10px;
     display: flex;
     justify-content: space-around;
     width: 100%;

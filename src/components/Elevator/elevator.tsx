@@ -1,10 +1,12 @@
 import React from 'react';
 import posed from 'react-pose'
 import './style.css';
+import ElevatorCar from './elevatorcar';
 
 interface ElevatorProps {
   clickHandler: any
   position: string,
+  towerHeight: number,
 }
 
 const Box = posed.div({
@@ -15,17 +17,18 @@ const Box = posed.div({
 export default class Example extends React.Component<ElevatorProps> {
   state = { isVisible: true };
 
-  componentDidMount() {
-    setInterval(() => {
-      this.setState({ isVisible: !this.state.isVisible });
-    }, 10000);
-  }
+  // componentDidMount() {
+  //   setInterval(() => {
+  //     this.setState({ isVisible: !this.state.isVisible });
+  //   }, 10000);
+  // }
 
   render() {
     const { isVisible } = this.state;
     return (
       <div className={this.props.position === "left" ? "leftElevator" : "rightElevator"}>
-        <Box className="elevatorCar" pose={isVisible ? 'visible' : 'hidden'} />
+        {/* <Box className="elevatorCar" pose={isVisible ? 'visible' : 'hidden'} /> */}
+        <ElevatorCar towerHeight={this.props.towerHeight}></ElevatorCar>
       </div>
     )
   }

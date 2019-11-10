@@ -1,8 +1,6 @@
 .floor {
     background-color: slategray;
-    border: 5px solid darkslategrey;
-    border-radius: .5em;
-    padding: 10px;
+    border-top: .5em solid darkslategrey;
     display: flex;
     flex-direction: row;
     height: 7em;

@@ -89,13 +89,13 @@ export default class Tower extends React.Component<TowerProps> {
             <div className="outerTower">
                 <NewFloorButton onClick={this.addFloor}></NewFloorButton>
                 <div className="innerTower">
-                    <Elevator position="left" clickHandler={() => { }}></Elevator>
+                    <Elevator towerHeight={this.state.floors.length} position="left" clickHandler={() => { }}></Elevator>
                     <div className="floors">
                         {this.state.floors.map((floor) => {
                             return <Floor key={floor.number} availableRoomTypes={this.props.availableRoomTypes} number={floor.number} _id={floor._id} towerName={this.state.name} updateGameState={this.props.updateGameState}></Floor>
                         })}
                     </div>
-                    <Elevator position="right" clickHandler={() => { }}></Elevator>
+                    <Elevator towerHeight={this.state.floors.length} position="right" clickHandler={() => { }}></Elevator>
                 </div>
              </div>
         )
