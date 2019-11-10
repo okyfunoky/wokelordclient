@@ -4,6 +4,7 @@ import newFloorButton from '../NewFloorButton/NewFloorButton'
 import './style.css';
 import NewFloorButton from "../NewFloorButton/NewFloorButton";
 import Elevator from "../Elevator/elevator"
+import { getFloorRooms } from "../../util/api";
 const api = require('../../util/api');
 
 export interface TowerProps {
@@ -43,7 +44,9 @@ export default class Tower extends React.Component<TowerProps> {
     }
 
     addFloor = async () => {
-        console.log(this.state.floors.length)
+        
+        if(this.state.floors.length < 20){
+            console.log(this.state.floors.length)
         let topFloor: any = this.state.floors[this.state.floors.length - 1];
         console.log(topFloor)
         let newFloor;
@@ -67,6 +70,9 @@ export default class Tower extends React.Component<TowerProps> {
         newFloors.push(newlyBuiltFloor);
         this.handleUpdateGameState();
         this.setState({ floors: newFloors });
+        }else{
+            alert("You can't build any higher because you'd block some NIMBY's view... or rather you'd 'Change the character of the neighborhood'. Game over.");
+        }
     }
 
     handleAddFloor = () => {
@@ -86,7 +92,7 @@ export default class Tower extends React.Component<TowerProps> {
                     <Elevator position="left" clickHandler={() => { }}></Elevator>
                     <div className="floors">
                         {this.state.floors.map((floor) => {
-                            return <Floor availableRoomTypes={this.props.availableRoomTypes} number={floor.number} _id={floor._id} towerName={this.state.name} updateGameState={this.props.updateGameState}></Floor>
+                            return <Floor key={floor.number} availableRoomTypes={this.props.availableRoomTypes} number={floor.number} _id={floor._id} towerName={this.state.name} updateGameState={this.props.updateGameState}></Floor>
                         })}
                     </div>
                     <Elevator position="right" clickHandler={() => { }}></Elevator>

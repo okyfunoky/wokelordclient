@@ -1,7 +1,9 @@
 import * as React from 'react';
 import './style.css';
+import Menu from '@material-ui/core/Menu';
+import RoomContextmenu from '../RoomContextMenu/roomcontextmenu'
 
-export interface RoomProps { 
+export interface RoomProps {
     name: string,
     tenants: any[],
     floorId: string,
@@ -10,22 +12,40 @@ export interface RoomProps {
     rent: number,
     maintenance: number,
     happiness: number,
- }
-
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
-export default class Room extends React.Component<RoomProps, {}> {
-    state = {
-        name: this.props.name,
-        tenants: this.props.tenants,
-        type: this.props.type,
-        rent: this.props.rent,
-        maintenance: this.props.maintenance,
-        happiness: this.props.happiness
-
-    }
-    
-    render() {
-        return <div className={this.props.type}></div>;
-    }
 }
+
+const Room: React.FC<RoomProps> = (props) => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    function handleClick(event: any) {
+        setAnchorEl(event.currentTarget);
+    };
+
+    function handleClose() {
+        setAnchorEl(null);
+    };
+
+    
+    return (
+        <div className={props.type} onClick={handleClick}>
+            <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+            >
+                <div className="roomcontextmenu">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </Menu>
+        </div>
+    )
+}
+
+export default Room;

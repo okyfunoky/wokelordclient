@@ -66,6 +66,7 @@ export default class Floor extends React.Component<FloorProps, {}> {
                             happiness={room.happiness}
                             rent={room.rent}
                             maintenance={room.maintenance}
+                            key={room._id}
                         />
                     )
                 })}

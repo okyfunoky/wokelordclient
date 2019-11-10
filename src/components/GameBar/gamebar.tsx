@@ -1,5 +1,7 @@
 import * as React from 'react';
 import './style.css';
+import Stars from '../Stars/stars'
+import { tsImportEqualsDeclaration } from '@babel/types';
 
 export interface GamebarProps {
     gameState: {
@@ -30,14 +32,13 @@ export default class GameBar extends React.Component<GamebarProps, {}> {
                     {this.props.gameState.happiness}
                 </div>
                 <div className="gamebarItem">
-                    <span>Star Level: </span>
-                    {this.props.gameState.starLevel}
+                    <span>Star Level: <Stars stars={this.props.gameState.starLevel}></Stars></span>
                 </div>
                 <div className="gamebarItem">
                     <span>Population: </span>
                     {this.props.gameState.population}
                 </div>
-                <button onClick={this.props.endMonthHandler}>Proceed to Next Month</button>
+                <button className="nextmonthbutton" onClick={this.props.endMonthHandler}>Collect Rent $$$</button>
             </div>
         )
     }

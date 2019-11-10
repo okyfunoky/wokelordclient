@@ -10,7 +10,7 @@ const NewFloorButton: React.FC<NewFloorProps> = (props) => {
     return (
 
         <button className="newFloorButton" onClick={props.onClick}>
-            <span className="tooltiptext">Click to build a new floor $</span>
+            <span className="tooltiptext">Click to build a new floor for $100,000</span>
         </button>
     )
 }

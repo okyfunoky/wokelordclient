@@ -12,7 +12,7 @@ const RoomBuildMenu: React.FC<RoomBuildMenuProps> = (props) => {
 return (
     <div className="RoomBuildMenu">
         {Array.from(props.roomTypeList).map((roomType)=>{
-            return <RoomBuildButton clickHandler={props.clickHandler} roomType={roomType} roomName="Foo">{roomType}</RoomBuildButton>
+            return <RoomBuildButton key={roomType} clickHandler={props.clickHandler} roomType={roomType} roomName="Foo">{roomType}</RoomBuildButton>
         })}
 {/* 
         <RoomBuildButton clickHandler={props.clickHandler} roomType={"office"} roomName="Foo"></RoomBuildButton>

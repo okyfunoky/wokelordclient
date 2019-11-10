@@ -1,0 +1,36 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted darkslategrey; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: darkslategrey;
+    color: green;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .newroombutton:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .newroombutton {
+      display: flex;
+      flex-direction: row;
+      width: 9em;
+      height: 6em;
+      font-size: 1em;
+      align-items: center;
+      color: white;
+      background-color: steelblue;
+  }

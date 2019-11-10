@@ -5,7 +5,7 @@ import Game from './components/Game/game';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Game towerName="demoten">
+      <Game towerName="demotwelve">
       </Game>
     </div>
   );

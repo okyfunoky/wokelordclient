@@ -8,6 +8,12 @@
     justify-self: flex-start;
 }
 
+.roomcontextmenu {
+    width: 20em;
+    height: 20em;
+    background-color: salmon;
+}
+
 .office {
     width: 20%;
     height: 100%;

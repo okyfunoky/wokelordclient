@@ -1,11 +1,11 @@
 .floor {
-    background-color: teal;
-    border: 5px solid rgb(111,41,97);
+    background-color: slategray;
+    border: 5px solid darkslategrey;
     border-radius: .5em;
     padding: 10px;
     display: flex;
     flex-direction: row;
-    height: 8em;
+    height: 7em;
     box-sizing: border-box;
 }
 

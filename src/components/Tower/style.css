@@ -1,6 +1,6 @@
 .innerTower {
-    background-color: salmon;
-    border: 5px solid rgb(111,41,97);
+    background-color: lightslategray;
+    border: 5px solid gray;
     border-radius: .5em;
     padding: 10px;
     display: flex;
@@ -18,8 +18,8 @@
 }
 
 .floors {
-    background-color: thistle;
-    border: 5px solid rgb(111,41,97);
+    background-color: lightslategray;
+    border: 5px solid gray;
     border-radius: .5em;
     padding: 10px;
     display: flex;
