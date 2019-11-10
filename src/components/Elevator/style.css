@@ -14,7 +14,10 @@
 
 .elevatorCar {
     width: 100%;
-    height: 8em;
+    height: 5em;
     background-color: black;
     position: absolute;
+    background-image: url('../../images/RoomGifs/elevator.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
 }

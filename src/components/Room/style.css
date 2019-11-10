@@ -21,7 +21,7 @@
     background-color:gray;
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
-    background-image: url('../../images/RoomGifs/ezgif.com-crop.gif');
+    background-image: url('../../images/RoomGifs/office.gif');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -83,10 +83,13 @@
 }
 
 .hotel {
-    width: 15%;
+    width: 10%;
     height: 100%;
     padding: 10px;
     background-color:purple;
     border: 2px solid rgba(111,41,97,.5);
     box-sizing: border-box;
+    background-image: url('../../images/RoomGifs/hotel.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
