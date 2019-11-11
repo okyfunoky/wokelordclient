@@ -20,7 +20,7 @@ const ElevatorCar: React.FC<ElevatorCarProps> = (props) => {
 
     const [on, toggle] = useState(false);
     
-    const animation = useSpring({ config: { duration: eleveatorDuration },
+    const animation = useSpring({ config: { friction: 300 },
          bottom: on ? elevatorMaxHeight : "1em"
     })
 

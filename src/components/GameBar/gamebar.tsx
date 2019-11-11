@@ -1,7 +1,9 @@
 import * as React from 'react';
 import './style.css';
 import Stars from '../Stars/stars'
+import GameBarItem from './gamebaritem'
 import { tsImportEqualsDeclaration } from '@babel/types';
+import { useSpring } from 'react-spring';
 
 export interface GamebarProps {
     gameState: {
@@ -13,8 +15,6 @@ export interface GamebarProps {
     endMonthHandler: any
 }
 
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the '{}' type.
 export default class GameBar extends React.Component<GamebarProps, {}> {
     state = {
         money: 0
@@ -25,18 +25,14 @@ export default class GameBar extends React.Component<GamebarProps, {}> {
             <div className="gamebar">
                 <div className="money gamebarItem">
                     <span>Funds: </span>
-                    {this.props.gameState.money}
-                </div>
-                <div className="happiness gamebarItem">
-                    <span>Happiness: </span>
-                    {this.props.gameState.happiness}
+                    <GameBarItem ending={this.props.gameState.money} starting={0} ></GameBarItem>
                 </div>
                 <div className="gamebarItem">
                     <span>Star Level: <Stars stars={this.props.gameState.starLevel}></Stars></span>
                 </div>
                 <div className="gamebarItem">
                     <span>Population: </span>
-                    {this.props.gameState.population}
+                    <GameBarItem ending={this.props.gameState.population} starting={0} ></GameBarItem>
                 </div>
                 <button className="nextmonthbutton" onClick={this.props.endMonthHandler}>Collect Rent $$$</button>
             </div>

@@ -2,6 +2,7 @@ import * as React from 'react';
 import './style.css';
 import Menu from '@material-ui/core/Menu';
 import RoomContextmenu from '../RoomContextMenu/roomcontextmenu'
+import { useSpring, animated } from 'react-spring';
 
 export interface RoomProps {
     name: string,
@@ -15,19 +16,18 @@ export interface RoomProps {
 }
 
 const Room: React.FC<RoomProps> = (props) => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
 
-    function handleClick(event: any) {
-        setAnchorEl(event.currentTarget);
-    };
+    const animation = useSpring({
+        config: { duration: 2000 },
+        opacity: 1, from: {opacity: 0}
+    })
 
-    function handleClose() {
-        setAnchorEl(null);
-    };
 
-    
     return (
-        <div className={props.type} onClick={handleClick}></div>
+        // <div className={props.type}></div>
+        <animated.div className={props.type} style={animation}>
+            {/* <div className={props.type}></div> */}
+        </animated.div>
     )
 }
 

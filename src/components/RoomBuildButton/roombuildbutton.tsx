@@ -64,9 +64,10 @@ const RoomBuildButton: React.FC<RoomBuildButtonProps> = (props) => {
   return (
     <button className="newroombutton" onClick={()=> props.clickHandler(props.roomName, props.roomType)}>{props.roomType}
       <span className="tooltiptext">
+        <p>Type: {props.roomType}</p>
         <p>Cost: {getRoomCost()}</p>
         <p>Tenants: {getRoomTenants()}</p>
-        </span>
+      </span>
       
     </button>
   );
