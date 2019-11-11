@@ -28,7 +28,6 @@ const ElevatorCar: React.FC<ElevatorCarProps> = (props) => {
 
         <div>
             <animated.div onClick={() => toggle(!on)} className="elevatorCar" style={animation}></animated.div>
-            
         </div>
     )
 }
