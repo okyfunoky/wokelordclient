@@ -9,7 +9,7 @@ export interface TowerListItemProps {
 }
 
 
-const TowerList: React.FC<TowerListItemProps> = (props) => {
+const TowerListItem: React.FC<TowerListItemProps> = (props) => {
     
 function handleHandleButtonClick(){
     console.log("tli getting called")
@@ -17,10 +17,10 @@ function handleHandleButtonClick(){
 }
     
     return (
-        <div onClick={handleHandleButtonClick}>
+        <p className="towerListItem" onClick={handleHandleButtonClick}>
             {props.name}
-        </div>
+        </p>
     )
 }
 
-export default TowerList;
+export default TowerListItem;

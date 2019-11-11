@@ -10,23 +10,23 @@ interface RoomBuildButtonProps {
 const RoomBuildButton: React.FC<RoomBuildButtonProps> = (props) => {
   const getRoomCost = () =>{
     if(props.roomType==="office"){
-      return 5000;
+      return 2000;
     }
 
     if(props.roomType==="condo"){
-      return 20000;
+      return 500;
     }
 
     if(props.roomType==="apartment"){
-      return 8000;
+      return 1000;
     }
 
     if(props.roomType==="restaurant"){
-      return 20000;
+      return 5000;
     }
 
     if(props.roomType==="hotel"){
-      return 5000;
+      return 2500;
     }
 
     if(props.roomType==="cleaning"){

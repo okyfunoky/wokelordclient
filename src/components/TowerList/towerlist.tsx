@@ -46,9 +46,10 @@ const TowerList: React.FC<TowerListProps> = (props) => {
             {towerList.map((name: any) => {
                 return <TowerListItem name={name} onClick={handleButtonClick}></TowerListItem>
             })}
-            <button onClick={handleButtonClick}>Create a New Tower</button>
+            <button className="towerListButton" onClick={handleButtonClick}>Create a New Tower</button>
             <div>
             <input
+                      className="towerListEntry"
                       value={newTowerName}
                       onChange={handleInputChange}
                       name="newTowerName"

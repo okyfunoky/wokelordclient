@@ -1,3 +1,20 @@
 .towerSelect {
-    background-color: salmon;
+    background-color: grey;
+    display: flex;
+    width: 40em;
+    flex-direction: column;
+    border-color: black;
+}
+
+.towerListItem {
+    font-size: 1.4em;
+}
+
+.towerListEntry {
+    width: 40em;
+    font-size: 1.4em;
+}
+
+.towerListButton {
+    font-size: 1.4em;
 }
