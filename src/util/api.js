@@ -1,5 +1,6 @@
 import * as axios from 'axios'
-const url = 'https://wokelordserver.herokuapp.com'
+// const url = 'https://wokelordserver.herokuapp.com'
+const url = 'http://localhost:3001'
 
 export function buildFloor(towerName, floorNumber) {
     console.log("Attempting to build a floor..." + floorNumber);
@@ -25,6 +26,14 @@ export async function endMonth(towerName) {
 
 export async function getFloorRooms(floorId) {
     return axios.get(url + `/game/loadrooms/${floorId}`);
+}
+
+export async function loadTowers() {
+    return axios.get(url + `/game/loadtowers`);
+}
+
+export async function createTower(towerName) {
+    return axios.post(url + `/game/createtower/${towerName}`);
 }
 
 export function buildRoomOnFloor(towerName, floorId, roomName, roomType, roomRent, roomMaintenance, roomHappiness) {
