@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f35823f69aca570c9307e3a6e29ca3b0",
+    "revision": "e1bba7fbde483e15f5eae99ef2a775d5",
     "url": "/wokelordclient/index.html"
   },
   {
-    "revision": "e5f45f8d10dacb5143c5",
-    "url": "/wokelordclient/static/css/main.9cb12e9c.chunk.css"
+    "revision": "95001eabff1ce75d475f",
+    "url": "/wokelordclient/static/css/main.f08c94be.chunk.css"
   },
   {
-    "revision": "8edc4d0f851f42cea990",
-    "url": "/wokelordclient/static/js/2.084baaf7.chunk.js"
+    "revision": "0aa95089d1b75bfb9d40",
+    "url": "/wokelordclient/static/js/2.a55594ef.chunk.js"
   },
   {
-    "revision": "e5f45f8d10dacb5143c5",
-    "url": "/wokelordclient/static/js/main.61356cd1.chunk.js"
+    "revision": "95001eabff1ce75d475f",
+    "url": "/wokelordclient/static/js/main.1cbd1b7e.chunk.js"
   },
   {
     "revision": "39ff303ca2959fe790a5",
     "url": "/wokelordclient/static/js/runtime-main.59c3f623.js"
   },
   {
-    "revision": "0b169ba57fdadc1311bc7a9cf56115ed",
-    "url": "/wokelordclient/static/media/Crane-large-pixel-clipart-design-clipartsfree-removebg-preview.0b169ba5.png"
+    "revision": "f5fb894c03117f745519b2b93aa1465d",
+    "url": "/wokelordclient/static/media/Crane-large-pixel-clipart-design-clipartsfree-removebg-preview.f5fb894c.png"
   },
   {
     "revision": "42ff5ba661631cbe593a45462d1f83e2",
