@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e1bba7fbde483e15f5eae99ef2a775d5",
+    "revision": "dbb4547bf337d89ddd66e8f1f2dbc864",
     "url": "/wokelordclient/index.html"
   },
   {
-    "revision": "95001eabff1ce75d475f",
-    "url": "/wokelordclient/static/css/main.f08c94be.chunk.css"
+    "revision": "ea6f659f347397dc7436",
+    "url": "/wokelordclient/static/css/main.2267f3d8.chunk.css"
   },
   {
     "revision": "0aa95089d1b75bfb9d40",
     "url": "/wokelordclient/static/js/2.a55594ef.chunk.js"
   },
   {
-    "revision": "95001eabff1ce75d475f",
-    "url": "/wokelordclient/static/js/main.1cbd1b7e.chunk.js"
+    "revision": "ea6f659f347397dc7436",
+    "url": "/wokelordclient/static/js/main.4286df43.chunk.js"
   },
   {
     "revision": "39ff303ca2959fe790a5",
