@@ -18,17 +18,35 @@
     cursor: grab;
 }
 
+.towerListItemName {
+    border: 5px ridge #1C6EA4;
+}
+
 .towerListEntry {
     font-size: 1.4em;
-    width: 100%;
+    width: 98%;
     text-align: center;
+    margin: .2em;
 }
 
 .towerListButton {
     font-size: 1.4em;
+    margin: .2em;
 }
 
 .instructions {
     font-size: 2em;
-    color: white;
+    color: #1C6EA4;
+}
+
+.title {
+    font-size: 5em;
+    color: salmon;
+}
+
+.joke {
+    border: 5px ridge #1C6EA4;
+    background-color: grey;
+    font-size: 5em;
+    color: #1C6EA4;
 }

@@ -11,6 +11,7 @@ export interface TowerListProps {
 const TowerList: React.FC<TowerListProps> = (props) => {
     const [towerList, setTowerList] = useState();
     const [newTowerName, setNewTowerName] = useState();
+    const [jokeClicked, setJokeClicked] = useState(false);
 
     useEffect(() => {
         api.loadTowers()
@@ -40,10 +41,11 @@ const TowerList: React.FC<TowerListProps> = (props) => {
 
     }
 
-    if (towerList) {
+    if (towerList && jokeClicked) {
         return (
             <div className="towerSelectContainer">
                 <div className="towerSelect">
+                    <h1 className="title">WOKELORD</h1>
                     <p className="instructions">Click a tower name to load that tower</p>
                     {towerList.map((name: any) => {
                         return <TowerListItem name={name} onClick={handleButtonClick}></TowerListItem>
@@ -70,8 +72,8 @@ const TowerList: React.FC<TowerListProps> = (props) => {
 
 
     return (
-        <div className="towerSelect">
-
+        <div className="towerSelectContainer">
+            <h1 className="joke" onClick={()=>{setJokeClicked(true)}}>What's the opposite of a slumlord?</h1>
         </div>
     )
 }
