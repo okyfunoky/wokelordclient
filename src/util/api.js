@@ -1,6 +1,5 @@
 import * as axios from 'axios'
-// const url = 'https://wokelordserver.herokuapp.com'
-const url = 'http://localhost:3001'
+const url = 'https://wokelordserver.herokuapp.com'
 
 export function buildFloor(towerName, floorNumber) {
     console.log("Attempting to build a floor..." + floorNumber);

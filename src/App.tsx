@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
   if (towerLoaded) {
     return (
-      <div className="App">
+      <div className="appTower">
         <Game towerName={selectedTower}>
         </Game>
       </div>

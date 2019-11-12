@@ -1,20 +1,34 @@
+.towerSelectContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+}
+
 .towerSelect {
     background-color: grey;
     display: flex;
-    width: 40em;
     flex-direction: column;
-    border-color: black;
+    border: 5px ridge #1C6EA4;
 }
 
 .towerListItem {
     font-size: 1.4em;
+    cursor: grab;
 }
 
 .towerListEntry {
-    width: 40em;
     font-size: 1.4em;
+    width: 100%;
+    text-align: center;
 }
 
 .towerListButton {
     font-size: 1.4em;
+}
+
+.instructions {
+    font-size: 2em;
+    color: white;
 }

@@ -24,41 +24,47 @@ const TowerList: React.FC<TowerListProps> = (props) => {
             });
     });
 
-    function handleInputChange(event:any) {
+    function handleInputChange(event: any) {
         setNewTowerName(event.target.value);
-      };
+    };
 
-    const handleButtonClick = (name: any) =>{
+    const handleButtonClick = (name: any) => {
         props.selectTower(name);
     }
 
-    function createTower(){
-       let name = newTowerName;
-        api.createTower(name).then(()=>{
+    function createTower() {
+        let name = newTowerName;
+        api.createTower(name).then(() => {
             props.selectTower(name);
         })
-        
+
     }
 
     if (towerList) {
         return (
-        <div className="towerSelect">
-            {towerList.map((name: any) => {
-                return <TowerListItem name={name} onClick={handleButtonClick}></TowerListItem>
-            })}
-            <button className="towerListButton" onClick={handleButtonClick}>Create a New Tower</button>
-            <div>
-            <input
-                      className="towerListEntry"
-                      value={newTowerName}
-                      onChange={handleInputChange}
-                      name="newTowerName"
-                      type="text"
-                      placeholder="Type a new Tower Name here"
-                      id="tower"  
-            />      
+            <div className="towerSelectContainer">
+                <div className="towerSelect">
+                    <p className="instructions">Click a tower name to load that tower</p>
+                    {towerList.map((name: any) => {
+                        return <TowerListItem name={name} onClick={handleButtonClick}></TowerListItem>
+                    })}
+                </div>
+                <div>
+                    <input
+                        className="towerListEntry"
+                        value={newTowerName}
+                        onChange={handleInputChange}
+                        name="newTowerName"
+                        type="text"
+                        placeholder="Type a new Tower Name here"
+                        id="tower"
+                    />
+                    <div>
+                        <button className="towerListButton" onClick={createTower}>Create a New Tower</button>
+                    </div>
+
+                </div>
             </div>
-        </div>
         )
     }
 
